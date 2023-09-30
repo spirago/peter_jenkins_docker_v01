@@ -11,9 +11,9 @@ ARG HDP_REPO_URL
 RUN yum install -y sudo wget openssl-devel postgresql-jdbc mysql-connector-java unzip ntp
 RUN systemctl enable ntpd
 #RUN systemctl start ntpd
-RUN wget -nv ${AMBARI_REPO_URL} -O /etc/yum.repos.d/ambari.repo
-RUN wget -nv ${HDP_REPO_URL} -O /etc/yum.repos.d/hdp.repo
-RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == systemd-tmpfiles-setup.service ] || rm -f $i; done); \
+#RUN wget -nv ${AMBARI_REPO_URL} -O /etc/yum.repos.d/ambari.repo
+#RUN wget -nv ${HDP_REPO_URL} -O /etc/yum.repos.d/hdp.repo
+#RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == systemd-tmpfiles-setup.service ] || rm -f $i; done); \
 rm -f /lib/systemd/system/multi-user.target.wants/*;\
 rm -f /etc/systemd/system/*.wants/*;\
 rm -f /lib/systemd/system/local-fs.target.wants/*; \
@@ -23,7 +23,7 @@ rm -f /lib/systemd/system/basic.target.wants/*;\
 rm -f /lib/systemd/system/anaconda.target.wants/*;
 ## Uncomment if you want to run kerberos in container
 ## RUN yum install -y krb5-server krb5-libs krb5-workstation
-RUN yum install -y ambari-agent
+#RUN yum install -y ambari-agent
 #RUN yum install -y ambari-metrics-*
 #RUN yum install -y ambari-logsearch-*
 #RUN yum install -y hadoop*
