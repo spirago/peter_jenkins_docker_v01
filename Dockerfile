@@ -14,13 +14,13 @@ RUN systemctl enable ntpd
 #RUN wget -nv ${AMBARI_REPO_URL} -O /etc/yum.repos.d/ambari.repo
 #RUN wget -nv ${HDP_REPO_URL} -O /etc/yum.repos.d/hdp.repo
 #RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == systemd-tmpfiles-setup.service ] || rm -f $i; done); \
-rm -f /lib/systemd/system/multi-user.target.wants/*;\
-rm -f /etc/systemd/system/*.wants/*;\
-rm -f /lib/systemd/system/local-fs.target.wants/*; \
-rm -f /lib/systemd/system/sockets.target.wants/*udev*; \
-rm -f /lib/systemd/system/sockets.target.wants/*initctl*; \
-rm -f /lib/systemd/system/basic.target.wants/*;\
-rm -f /lib/systemd/system/anaconda.target.wants/*;
+#rm -f /lib/systemd/system/multi-user.target.wants/*;\
+#rm -f /etc/systemd/system/*.wants/*;\
+#rm -f /lib/systemd/system/local-fs.target.wants/*; \
+#rm -f /lib/systemd/system/sockets.target.wants/*udev*; \
+#rm -f /lib/systemd/system/sockets.target.wants/*initctl*; \
+#rm -f /lib/systemd/system/basic.target.wants/*;\
+#rm -f /lib/systemd/system/anaconda.target.wants/*;
 ## Uncomment if you want to run kerberos in container
 ## RUN yum install -y krb5-server krb5-libs krb5-workstation
 #RUN yum install -y ambari-agent
