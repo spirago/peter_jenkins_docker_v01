@@ -8,3 +8,6 @@ RUN apt-get update \
 
 # Use RUN to install Python packages (numpy and scipy) via pip, Python's package manager
 RUN pip3 install numpy scipy
+EXPOSE 8000
+
+CMD [ "/bin/bash" ]
