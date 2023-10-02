@@ -120,7 +120,7 @@ RUN brew update && brew install pyenv
 COPY README.md /usr/share/nginx/html/README.md
 
 # Start Scripts
-COPY --from=./start.sh /
+COPY start.sh /
 RUN chmod +x /start.sh
 
 CMD ["/start.sh"]
